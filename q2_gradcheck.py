@@ -18,7 +18,8 @@ def gradcheck_naive(f, x):
     random.setstate(rndstate)
     fx, grad = f(x) # Evaluate function value at original point
     h = 1e-4        # Do not change this!
-
+    # print('x',x)
+    # print('grad', grad)
     # Iterate over all indexes ix in x to check the gradient.
     it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
     while not it.finished:
@@ -42,7 +43,7 @@ def gradcheck_naive(f, x):
         test1[ix] = x[ix]+h
         test2[ix] = x[ix]-h
         numgrad = (f(test1)[0] - f(test2)[0]) / (2*h)
-        
+        # print(f(test1)[0],f(test2)[0],(2*h),numgrad)
         # Compare gradients
         reldiff = abs(numgrad - grad[ix]) / max(1, abs(numgrad), abs(grad[ix]))
         if reldiff > 1e-5:
@@ -51,7 +52,7 @@ def gradcheck_naive(f, x):
             print ("Your gradient: %f \t Numerical gradient: %f" % (
                 grad[ix], numgrad))
             return
-
+        
         it.iternext() # Step to next dimension
 
     print ("Gradient check passed!")
