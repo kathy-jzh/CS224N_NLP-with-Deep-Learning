@@ -6,9 +6,11 @@ I am working through all the assignments to improve my understanding of NLP and 
 
 
 All assignments are written in Python3.6
+
 ## Completed
 
 Assignment 1
+
 Assignment 2
 
 ## In Progress
