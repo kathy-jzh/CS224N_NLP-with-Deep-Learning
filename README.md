@@ -4,7 +4,11 @@ This repository is for my solution to CS224N assignments and codes from Stanford
 
 All assignments are written in Python3.6
 
-# Completed
+## Completed
 
 Assignment 1
 Assignment 2
+
+## In Progress
+
+Assignment 3
